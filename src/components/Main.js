@@ -17,7 +17,7 @@ const Main = () => {
     }}>
       <Routes>
         <Route exact path="/" element={<Books />} />
-        <Route path="/book/:id" element={<BookDetails />} />
+        <Route path="/books/:id" element={<BookDetails />} />
         <Route path="/reservations" element={<Reservations />} />
         <Route path="/add_reservation" element={<AddReservation />} />
         <Route path="/add_book" element={<AddBook />} />
