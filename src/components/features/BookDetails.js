@@ -5,11 +5,22 @@ import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectAllbooks } from '../../redux/bookSlice';
+import { deleteBook } from '../../redux/bookSlice';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const BookDetails = () => {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
   const { id } = useParams()
   const books = useSelector(selectAllbooks)
   const book = books.find(book => (book.id).toString() === id)
+
+  const handleDeleteBook = (id) => {
+    dispatch(deleteBook({id}))
+    navigate('/')
+  }
 
   return (
     <Box sx={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
@@ -31,7 +42,7 @@ const BookDetails = () => {
                 <Link to="/">
                   <Button sx={{backgroundColor: "#ddd", color: "#000", "&:hover": {backgroundColor: "#eee"}}} variant="contained"><ArrowBackIosIcon />Back</Button>
                 </Link>
-                <Button sx={{backgroundColor: "#B93524", "&:hover": {backgroundColor: "#EE522F"}}} variant="contained">Delete</Button>
+                <Button sx={{backgroundColor: "#B93524", "&:hover": {backgroundColor: "#EE522F"}}} onClick={() => handleDeleteBook(book.id)} variant="contained">Delete</Button>
                 <Button sx={{backgroundColor: "#5BBC0C", "&:hover": {backgroundColor: "#84BB3A"}}} variant="contained">Reserve</Button>
                 <Button sx={{backgroundColor: "#39A0E2", "&:hover": {backgroundColor: "#2B7EBB"}}} variant="contained">Update</Button>
               </Box>

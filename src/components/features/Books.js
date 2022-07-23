@@ -15,7 +15,7 @@ const Books = () => {
       <Box sx={{margin: "40px 0"}}>
         <Container sx={{border: "2px solid #ddd", padding: "20px"}}>
           <Stack direction="row" spacing={4}>
-            { books.map((book) => (
+            { books.length ? books.map((book) => (
               <Link key={book.id} to={`/books/${book.id}`}>
                 <Card key={book.id} sx={{ maxWidth: 345 }}>
                   <CardActionArea>
@@ -36,7 +36,7 @@ const Books = () => {
                   </CardActionArea>
                 </Card>
               </Link>
-            ))
+            )) : <Typography sx={{textAlign: "center"}}>You have no books currently - <Link to="add_book"><Typography sx={{color: "#60B3D5"}}>Add Books Here</Typography></Link></Typography>
             }
           </Stack>
         </Container>

@@ -5,7 +5,7 @@ import { addBook } from '../../redux/bookSlice';
 import { useNavigate } from 'react-router-dom'
 
 const AddBook = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   const navigate = useNavigate()
 
   const [title, setTitle] = useState('');
