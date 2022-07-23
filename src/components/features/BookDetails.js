@@ -1,5 +1,6 @@
 import { Box, Typography, Container, Stack, Rating, Button } from '@mui/material'
 import React from 'react'
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { Link } from 'react-router-dom'
 import book1 from '../../images/book1.jpg'
 
@@ -24,6 +25,9 @@ const BookDetails = () => {
               <Typography sx={{marginBottom: "20px", fontWeight: "500"}} variant="p" component="p">$15.00</Typography>
               <Rating sx={{marginBottom: "20px"}} name="half-rating" defaultValue={4} precision={0.5} readOnly />
               <Box sx={{display: "flex", flexDirection: "row", gap: "20px"}}>
+                <Link to="/">
+                  <Button sx={{backgroundColor: "#ddd", color: "#000", "&:hover": {backgroundColor: "#eee"}}} variant="contained"><ArrowBackIosIcon />Back</Button>
+                </Link>
                 <Button sx={{backgroundColor: "#B93524", "&:hover": {backgroundColor: "#EE522F"}}} variant="contained">Delete</Button>
                 <Button sx={{backgroundColor: "#5BBC0C", "&:hover": {backgroundColor: "#84BB3A"}}} variant="contained">Reserve</Button>
                 <Button sx={{backgroundColor: "#39A0E2", "&:hover": {backgroundColor: "#2B7EBB"}}} variant="contained">Update</Button>
