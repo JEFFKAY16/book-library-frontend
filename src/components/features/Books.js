@@ -10,7 +10,7 @@ const Books = () => {
   return (
     <Box sx={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
       <Box sx={{width: "400px", textAlign: "center", margin: "20px auto"}}>
-        <Typography variant="small" component="p">“Good friends, good books, and a sleepy conscience: this is the ideal life.” <br /> ~ A Wise Man</Typography>
+        <Typography sx={{fontWeight: "200", fontSize: "20px"}} variant="small" component="p">“Good friends, good books, and a sleepy conscience: this is the ideal life.” <br /> ~ A Wise Man</Typography>
       </Box>
       <Box sx={{margin: "40px 0"}}>
         <Container sx={{border: "2px solid #ddd", padding: "20px"}}>
